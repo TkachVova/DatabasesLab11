@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<list>
+  <body id="1" length="494" width="189" amount_of_doors="5" volume_of_boot="565"/>
+  <body id="2" length="400" width="161" amount_of_doors="5" volume_of_boot="300"/>
+  <body id="3" length="450" width="180" amount_of_doors="5" volume_of_boot="600"/>
+  <body id="4" length="250" width="140" amount_of_doors="3" volume_of_boot="100"/>
+  <body id="5" length="425" width="180" amount_of_doors="3" volume_of_boot="320"/>
+</list>

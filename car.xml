@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<list>
+  <car id="1" producer="Audi" model="A6 Allroad" class="premium" drive="four-wheel" engine_id="1" interior_id="1" body_id="1" cost="60000"/>
+  <car id="2" producer="Audi" model="A6" class="premium" drive="front-wheel" engine_id="2" interior_id="4" body_id="3" cost="50000"/>
+  <car id="3" producer="Ford" model="Focus" class="C" drive="front-wheel" engine_id="3" interior_id="2" body_id="2" cost="20000"/>
+  <car id="4" producer="Ford" model="Focus ST" class="sport" drive="front-wheel" engine_id="2" interior_id="3" body_id="5" cost="35000"/>
+  <car id="5" producer="BMW" model="525GT" class="premium" drive="rear-wheel" engine_id="4" interior_id="4" body_id="3" cost="55000"/>
+  <car id="6" producer="BMW" model="M5" class="premium" drive="rear-wheel" engine_id="2" interior_id="5" body_id="5" cost="70000"/>
+  <car id="7" producer="Tesla" model="ModelS" class="premium" drive="rear-wheel" engine_id="5" interior_id="1" body_id="1" cost="120000"/>
+  <car id="8" producer="Smart" model="ForTwo" class="A" drive="front-wheel" engine_id="3" interior_id="3" body_id="4" cost="30000"/>
+</list>

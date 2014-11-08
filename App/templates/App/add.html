@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load bootstrap %}
+<html>
+<head>
+    <title></title>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="panel panel-primary" style="border-radius: 0px; margin-bottom: 2px;">
+      <div class="panel-heading" style="border-radius: 0px;">
+         <h3 class="panel-title" style="font-size: 150%;">Add</h3>
+      </div>
+    </div>
+    <div style="text-align: left; padding: 2px 15px;">
+        <a href="{% url 'index'%}" style="text-decoration: none;"></span> Home </a>
+        <a href="{% url 'add' %}" style="text-decoration: none;">Cancel changes<span class=""></span></a>
+    </div>
+    <form action='{% url 'add' %}' method="post">
+    {% csrf_token %}
+    <div class="container">
+        {{ form|bootstrap }}
+        <input type="submit" value="Save">
+    </div>
+    </form>
+</body>
+</html>

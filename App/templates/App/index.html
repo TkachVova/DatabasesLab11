@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load render_table from django_tables2 %}
+<html>
+<head>
+    <title></title>
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
+</head>
+<body>
+
+    <div class="panel panel-primary" style="border-radius: 0px;">
+      <div class="panel-heading" style="border-radius: 0px;">
+         <h3 class="panel-title" style="font-size: 150%;">Cars</h3>
+      </div>
+      <div class="panel-body">
+
+      <form search={% url 'search' %} method="post">
+        {%csrf_token%}
+        <div class="container" style="text-align: left; position: absolute">
+            <div>
+            <label for="cost" class="control-label">Cost:</label>
+            <select id="cost" name="cost" class="dropdown">
+                <option value="-">----</option>
+                <option value="less">less than 30000</option>
+                <option value="from">from 30000 to 60000</option>
+                <option value="more">more than 60000</option>
+            </select>
+            </div>
+            <div>
+            <label for="hpower" class="control-label">HPow:</label>
+            <select id="hpower" name="hpower" class="dropdown">
+                <option value="-">----</option>
+                <option value="less">less than 150</option>
+                <option value="from">from 150 to 300</option>
+                <option value="more">more than 300</option>
+            </select>
+            </div>
+            <div>
+                <label for="interior" class="control-label">Material of interior:</label>
+                <select id="interior" name="interior" class="dropdown">
+                    <option value="-">----</option>
+                    <option value="leather">leather</option>
+                    <option value="textile">textile</option>
+                </select>
+            </div>
+            <div>
+                <label for="doors" class="control-label">Amount of doors:</label>
+                <select id="doors" name="doors" class="dropdown">
+                    <option value="-">----</option>
+                    <option value="less">less than 3</option>
+                    <option value="from">from 3 to 5</option>
+                    <option value="more">more than 5</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" formaction={% url 'search' %} value="Search" name="form1" class="btn btn-xs"/>
+            </div>
+        </div>
+      </form>
+
+
+      <form action={% url 'action' %} method="post">
+        {%csrf_token%}
+        <div class="container" style="text-align: center;" >
+        <div style="text-align: center">
+        <label for="action" class="control-label">Action:</label>
+            <select id="action" name="action" class="dropdown">
+                <option value="-">----</option>
+                <option value="delete">delete</option>
+                <option value="load">reload data from files</option>
+            </select>
+            <input type="submit" formaction={% url 'action' %} value="Go" name="form2" class="btn btn-xs"/>
+            <a class="btn btn-xs" href="{% url 'add' %}">Add</a>
+
+        </div>
+
+
+
+        <div style="text-align: center;">{% render_table table %}</div>
+        </div>
+      </form>
+
+
+     </div>
+    </div>
+    <script language="JavaScript">
+        function toggle(source) {
+            var checkboxes = document.getElementsByName('selection');
+        for(var i in checkboxes)
+            checkboxes[i].checked = source.checked;
+        }
+   </script>
+
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+</body>
+</html>

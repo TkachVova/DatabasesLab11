@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<list>
+  <engine1 id="1" hpower="250" torgue="400" volume="3000" amount_of_cylynders="6" fuel_type="diesel" fuel_consumption="7.4"/>
+  <engine1 id="2" hpower="400" torgue="500" volume="4000" amount_of_cylynders="6" fuel_type="petrol" fuel_consumption="10"/>
+  <engine1 id="3" hpower="150" torgue="200" volume="2000" amount_of_cylynders="4" fuel_type="petrol" fuel_consumption="7"/>
+  <engine1 id="4" hpower="500" torgue="600" volume="5000" amount_of_cylynders="8" fuel_type="petrol" fuel_consumption="15"/>
+  <engine1 id="5" hpower="250" torgue="500" volume="0" amount_of_cylynders="0" fuel_type="electricity" fuel_consumption="0"/>
+</list>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<list>
+  <interior id="1" material="leather" color="black" amount_of_seats="5"/>
+  <interior id="2" material="textile" color="blue" amount_of_seats="4"/>
+  <interior id="3" material="leather" color="red" amount_of_seats="2"/>
+  <interior id="4" material="leather" color="white" amount_of_seats="4"/>
+  <interior id="5" material="textile" color="white" amount_of_seats="6"/>
+</list>
