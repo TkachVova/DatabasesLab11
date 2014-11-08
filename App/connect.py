@@ -142,7 +142,6 @@ class Database:
         return dict
 
 
-
     def get_all_from_car(self):
         self.cursor.execute('SELECT id, producer, model, class as car_class, drive, cost FROM car;')
         return self.cursor.fetchall()
@@ -158,3 +157,18 @@ class Database:
     def get_all_from_body(self):
         self.cursor_returns_list.execute('SELECT id, length FROM body')
         return self.cursor_returns_list.fetchall()
+
+    def do_fulltext_search(self, word):
+        query = ("""SELECT car.id, car.producer, car.model, car.class as car_class, car.drive, car.cost FROM car
+                    JOIN engine1 engine ON car.engine_id = engine.id
+                    JOIN interior ON car.interior_id = interior.id WHERE """)
+        against = "AGAINST('" + word + "' IN BOOLEAN MODE) "
+        query += "MATCH(car.producer) " + against
+        query += "OR MATCH(car.model) " + against
+        query += "OR MATCH(car.class) " + against
+        query += "OR MATCH(car.drive) " + against
+        query += "OR MATCH(engine.fuel_type) " + against
+        query += "OR MATCH(interior.material) " + against
+        query += "OR MATCH(interior.color) " + against + ';'
+        self.cursor.execute(query)
+        return self.cursor.fetchall()

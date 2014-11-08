@@ -85,3 +85,14 @@ def search(request):
         RequestConfig(request).configure(table)
         return render(request, 'App/search.html', {'table': table})
     return HttpResponse("No POST")
+
+
+def fulltext_search(request):
+    if request.method == 'POST':
+        database = Database()
+        search_word = request.POST.get('search_word', False)
+        table = tables.CarTable(database.do_fulltext_search(search_word))
+        RequestConfig(request).configure(table)
+        return render(request, 'App/index.html', {'table': table})
+    else:
+        return HttpResponseRedirect('/')
